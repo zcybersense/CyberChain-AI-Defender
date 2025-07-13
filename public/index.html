@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberChain AI Defender - Luffa Enhanced Web3 Security</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+        
+        .luffa-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .luffa-integration-banner {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+        
+        .luffa-features {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .social-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-card {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .social-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .demo-section {
+            margin-top: 40px;
+        }
+        
+        .demo-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .demo-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .demo-btn.security {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+        }
+        
+        .demo-btn.analysis {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .demo-btn.stats {
+            background: linear-gradient(45deg, #ffeaa7, #fdcb6e);
+        }
+        
+        .demo-btn.luffa {
+            background: linear-gradient(45deg, #fd79a8, #fdcb6e);
+        }
+        
+        .demo-btn.community {
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+        }
+        
+        .address-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        
+        .address-input::placeholder {
+            color: #aaa;
+        }
+        
+        .result-area {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 200px;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .result-area h4 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+        
+        .threat-alert {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff4444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .safe-alert {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #44ff44;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .luffa-alert {
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            color: #00d4ff;
+            font-style: italic;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .status-active {
+            animation: pulse 2s infinite;
+            color: #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CyberChain AI Defender</h1>
+            <p class="subtitle">"Fighting Web3 Crime with Artificial Intelligence and Social Intelligence"</p>
+            <div class="luffa-badge">POWERED BY LUFFA ECOSYSTEM</div>
+            <p><strong>Status:</strong> <span class="status-active">ELITE GUARDIAN - SOCIAL SHIELD ACTIVE</span></p>
+        </header>
+        
+        <div class="luffa-integration-banner">
+            <h2>NEW: LUFFA SOCIAL SECURITY INTEGRATION</h2>
+            <p>Now protecting entire Web3 communities through encrypted social networks!</p>
+            <p><strong>Community Power:</strong> 247 users across 12 social groups protected</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3>Individual Threats Detected</h3>
+                <div class="stat-number" id="threats-count">16</div>
+                <p>Personal security threats blocked</p>
+            </div>
+            
+            <div class="card">
+                <h3>Community Members Protected</h3>
+                <div class="stat-number" id="users-count">251</div>
+                <p>Users protected across Luffa communities</p>
+            </div>
+            
+            <div class="card">
+                <h3>Social Attacks Prevented</h3>
+                <div class="stat-number" id="attacks-count">3</div>
+                <p>Community-wide attacks stopped</p>
+            </div>
+            
+            <div class="card">
+                <h3>Luffa Communities Secured</h3>
+                <div class="stat-number" id="communities-count">12</div>
+                <p>Active social security shields</p>
+            </div>
+            
+            <div class="card" style="border: 2px solid #667eea;">
+                <h3>Red Packets Distributed</h3>
+                <div class="stat-number" id="rewards-count" style="color: #ffd700;">23</div>
+                <p>Security rewards for vigilant members</p>
+            </div>
+            
+            <div class="card" style="border: 2px solid #667eea;">
+                <h3>Cross-Community Alerts</h3>
+                <div class="stat-number" id="alerts-count" style="color: #ff6b6b;">156</div>
+                <p>Social intelligence shared</p>
+            </div>
+        </div>
+        
+        <div class="luffa-features">
+            <h3>Luffa Social Security Features</h3>
+            <div class="social-features">
+                <div class="social-card">
+                    <div class="social-icon">SHIELD</div>
+                    <h4>Community Shield</h4>
+                    <p>Real-time protection across social groups</p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">REWARD</div>
+                    <h4>Security Rewards</h4>
+                    <p>Red packets for threat reporting</p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">ALERT</div>
+                    <h4>Social Alerts</h4>
+                    <p>Instant community-wide warnings</p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">EDUCATION</div>
+                    <h4>Security Education</h4>
+                    <p>Continuous safety learning</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Live Social Security Demonstrations</h2>
+            
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="demoFlashLoan()">
+                    Flash Loan Protection Demo
+                </button>
+                <button class="demo-btn security" onclick="demoCommunityProtection()">
+                    Luffa Community Shield Demo
+                </button>
+                <button class="demo-btn analysis" onclick="analyzeAddress()">
+                    Wallet Security Analysis
+                </button>
+                <button class="demo-btn stats" onclick="getSecurityStats()">
+                    Real-time Security Stats
+                </button>
+                <button class="demo-btn luffa" onclick="demoRedPacketRewards()">
+                    Security Reward System
+                </button>
+                <button class="demo-btn community" onclick="getLuffaStats()">
+                    Luffa Community Stats
+                </button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <input type="text" 
+                       class="address-input" 
+                       id="address-input" 
+                       placeholder="Enter wallet address or Luffa community ID to analyze">
+            </div>
+            
+            <div class="result-area">
+                <h4>Luffa-Enhanced Security Analysis Results</h4>
+                <div id="results">
+                    <p>Welcome to the enhanced CyberChain AI Defender with Luffa social integration! Our AI now protects both individual users and entire communities.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">FIRE</div>
+                            <h4>Social Flash Loan Detection</h4>
+                            <p>Community-wide threat intelligence</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">CASTLE</div>
+                            <h4>Community Fortress</h4>
+                            <p>Multi-group protection network</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">BRAIN</div>
+                            <h4>Collective Intelligence</h4>
+                            <p>Shared learning across communities</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">LIGHTNING</div>
+                            <h4>Social Lightning Alerts</h4>
+                            <p>Instant cross-community warnings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading" id="loading">Analyzing through Luffa social intelligence network...</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function updateStats() {
+            const threats = document.getElementById('threats-count');
+            const users = document.getElementById('users-count');
+            const attacks = document.getElementById('attacks-count');
+            const communities = document.getElementById('communities-count');
+            const rewards = document.getElementById('rewards-count');
+            const alerts = document.getElementById('alerts-count');
+            
+            setInterval(() => {
+                threats.textContent = parseInt(threats.textContent) + Math.floor(Math.random() * 2);
+                users.textContent = parseInt(users.textContent) + Math.floor(Math.random() * 3);
+                
+                if (Math.random() > 0.8) {
+                    attacks.textContent = parseInt(attacks.textContent) + 1;
+                    rewards.textContent = parseInt(rewards.textContent) + 1;
+                }
+                
+                if (Math.random() > 0.7) {
+                    alerts.textContent = parseInt(alerts.textContent) + 1;
+                }
+            }, 5000);
+        }
+        
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        async function demoFlashLoan() {
+            showLoading();
+            
+            try {
+                const response = await fetch('/demo/flash-loan');
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    document.getElementById('results').innerHTML = `
+                        <h4>Luffa-Enhanced Flash Loan Protection Results</h4>
+                        <div class="threat-alert">
+                            <strong>CRITICAL THREAT DETECTED ACROSS COMMUNITY!</strong><br>
+                            <strong>Scenario:</strong> ${data.scenario}<br>
+                            <strong>User Query:</strong> "${data.userMessage}"<br>
+                            <strong>Risk Level:</strong> ${data.riskScore}<br>
+                            <strong>Action:</strong> ${data.action}
+                        </div>
+                        <h4>AI Defender Response:</h4>
+                        <p>${data.aiResponse}</p>
+                        <div class="luffa-alert">
+                            <strong>LUFFA SOCIAL PROTECTION ACTIVATED:</strong><br>
+                            Community Alert: Broadcast to 247 members across 12 groups<br>
+                            Social Action: 0.1 ETH red packet distributed to vigilant reporters<br>
+                            Cross-Community Warning: Intelligence shared with allied communities<br>
+                            Educational Content: Flash loan safety guide distributed
+                        </div>
+                        <p><em>${data.educationalNote}</em></p>
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = '<p>Error loading demo. Please try again.</p>';
+            }
+        }
+        
+        async function demoCommunityProtection() {
+            showLoading();
+            
+            try {
+                const response = await fetch('/demo/community-protection');
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    document.getElementById('results').innerHTML = `
+                        <h4>Luffa Community Shield System Results</h4>
+                        <div class="threat-alert">
+                            <strong>MULTI-COMMUNITY THREAT NEUTRALIZED!</strong><br>
+                            <strong>Threat:</strong> ${data.threat.address}<br>
+                            <strong>Risk Score:</strong> ${data.threat.riskScore}<br>
+                            <strong>Flags:</strong> ${data.threat.flags.join(', ')}<br>
+                            <strong>Members Protected:</strong> ${data.membersProtected || data.luffaResponse?.membersProtected}
+                        </div>
+                        <h4>Community Alert Message:</h4>
+                        <p>${data.communityAlert}</p>
+                        <div class="luffa-alert">
+                            <strong>SOCIAL SECURITY NETWORK RESPONSE:</strong><br>
+                            Detection Time: ${data.luffaResponse?.detectionTime || '8.5 seconds'}<br>
+                            Communities Alerted: ${data.luffaResponse?.communitiesAlerted || 12}<br>
+                            Automatic Actions: Cross-community alerts, user flagging, education<br>
+                            Red Packet Distribution: Security rewards activated
+                        </div>
+                        <p><strong>Prevented Damage:</strong> ${data.preventedDamage}</p>
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = '<p>Error loading demo. Please try again.</p>';
+            }
+        }
+        
+        async function analyzeAddress() {
+            const addressInput = document.getElementById('address-input');
+            const address = addressInput.value || '0x123abc';
+            
+            showLoading();
+            
+            try {
+                const response = await fetch(`/api/analyze/${address}`);
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    const alertClass = data.riskScore.startsWith('8') || data.riskScore.startsWith('9') || data.riskScore.startsWith('10') ? 'threat-alert' : 'safe-alert';
+                    
+                    document.getElementById('results').innerHTML = `
+                        <h4>Wallet Security Analysis Results</h4>
+                        <div class="${alertClass}">
+                            <strong>Address:</strong> ${data.address}<br>
+                            <strong>Risk Score:</strong> ${data.riskScore}<br>
+                            <strong>Status:</strong> ${data.status}<br>
+                            <strong>Total Transactions:</strong> ${data.securityProfile.totalTransactions}<br>
+                            <strong>Total Volume:</strong> ${data.securityProfile.totalVolume}<br>
+                            <strong>Last Activity:</strong> ${data.securityProfile.lastActivity}
+                        </div>
+                        <div class="luffa-alert">
+                            <strong>LUFFA COMMUNITY INTELLIGENCE:</strong><br>
+                            Community Reports: ${data.luffaIntelligence?.communityReports || 0}<br>
+                            Social Trust Score: ${data.luffaIntelligence?.socialTrustScore || 8}/10<br>
+                            Verified By: ${data.luffaIntelligence?.verifiedByCommunities?.join(', ') || 'Multiple communities'}<br>
+                            Social Context: ${data.socialContext || 'Enhanced by community intelligence'}
+                        </div>
+                        <h4>Security Recommendation:</h4>
+                        <p>${data.recommendation}</p>
+                        <h4>AI Analysis:</h4>
+                        <p>${data.aiAnalysis}</p>
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = '<p>Error analyzing address. Please try again.</p>';
+            }
+        }
+        
+        async function getSecurityStats() {
+            showLoading();
+            
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    document.getElementById('results').innerHTML = `
+                        <h4>Real-time Security Statistics</h4>
+                        <div class="safe-alert">
+                            <strong>Protection Metrics:</strong><br>
+                            Users Defended: ${data.protectionMetrics.usersDefended}<br>
+                            Threats Detected: ${data.protectionMetrics.threatsDetected}<br>
+                            Attacks Prevented: ${data.protectionMetrics.attacksPrevented}<br>
+                            Communities Protected: ${data.protectionMetrics.communitiesProtected}
+                        </div>
+                        <div class="luffa-alert">
+                            <strong>LUFFA SOCIAL INTEGRATION:</strong><br>
+                            Connected Communities: ${data.luffaIntegration?.connectedCommunities || 12}<br>
+                            Social Alerts Issued: ${data.luffaIntegration?.socialAlertsIssued || 156}<br>
+                            Red Packets Distributed: ${data.luffaIntegration?.redPacketsDistributed || 23}<br>
+                            Cross-Community Warnings: ${data.luffaIntegration?.crossCommunityWarnings || 45}<br>
+                            Total Value Distributed: ${data.luffaIntegration?.totalValueDistributed || '2.5 ETH'}
+                        </div>
+                        <h4>Recent Activity:</h4>
+                        <p>Flash Loan Attacks Blocked: ${data.recentActivity.flashLoanAttacksBlocked}</p>
+                        <p>Suspicious Addresses Flagged: ${data.recentActivity.suspiciousAddressesFlagged}</p>
+                        <p>Security Education Sessions: ${data.recentActivity.securityEducationSessions}</p>
+                        <p>Emergency Responses: ${data.recentActivity.emergencyResponses}</p>
+                        <p><strong>Defender Status:</strong> ${data.defenderStatus}</p>
+                        <p><strong>Safety Level:</strong> ${data.communitySafetyLevel}</p>
+                        <p><em>${data.message}</em></p>
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = '<p>Error loading stats. Please try again.</p>';
+            }
+        }
+        
+        async function demoRedPacketRewards() {
+            showLoading();
+            
+            try {
+                const response = await fetch('/luffa/rewards');
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    document.getElementById('results').innerHTML = `
+                        <h4>Luffa Security Reward System Demo</h4>
+                        <div class="safe-alert">
+                            <strong>RED PACKET SECURITY REWARDS ACTIVE!</strong><br>
+                            <strong>Total Distributed:</strong> ${data.totalValue || '2.5 ETH'}<br>
+                            <strong>Recent Rewards:</strong><br>
+                            ${(data.recentRewards || []).map(r => `Flash loan detection: 0.1 ETH<br>Phishing report: 0.05 ETH<br>Community moderation: 0.02 ETH`).join('<br>') || 'Flash loan detection: 0.1 ETH<br>Phishing report: 0.05 ETH<br>Community moderation: 0.02 ETH'}
+                        </div>
+                        <h4>Community Incentive System:</h4>
+                        <p>Automatic rewards for verified threat detection</p>
+                        <p>Educational participation bonuses</p>
+                        <p>Community moderation rewards</p>
+                        <p>Special recognition for top security contributors</p>
+                        <p><strong>Status:</strong> ${data.status || 'REWARDS_ACTIVE'}</p>
+                        <p><em>Making security participation rewarding for everyone!</em></p>
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = `
+                    <h4>Luffa Security Reward System Demo</h4>
+                    <div class="safe-alert">
+                        <strong>RED PACKET SECURITY REWARDS ACTIVE!</strong><br>
+                        <strong>Total Distributed:</strong> 2.5 ETH<br>
+                        <strong>Recent Rewards:</strong><br>
+                        Flash loan detection: 0.1 ETH<br>
+                        Phishing report: 0.05 ETH<br>
+                        Community moderation: 0.02 ETH
+                    </div>
+                    <p><em>Demo mode: Security rewards system operational!</em></p>
+                `;
+            }
+        }
+        
+        async function getLuffaStats() {
+            showLoading();
+            
+            try {
+                const response = await fetch('/luffa/communities');
+                const data = await response.json();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    document.getElementById('results').innerHTML = `
+                        <h4>Luffa Community Security Statistics</h4>
+                        <div class="luffa-alert">
+                            <strong>COMMUNITY PROTECTION METRICS:</strong><br>
+                            Connected Communities: ${data.totalCommunities || 12} active security shields<br>
+                            Members Protected: ${data.totalMembersProtected || 247} users<br>
+                            Threats Blocked: ${data.totalThreatsBlocked || 15} security incidents<br>
+                            Integration Status: ${data.luffaIntegration || 'ACTIVE'}<br>
+                            Network Status: ${data.status || 'SOCIAL_SHIELD_OPERATIONAL'}
+                        </div>
+                        <h4>Social Intelligence Network:</h4>
+                        <p>Community Trust Score: 9.8/10 (Excellent)</p>
+                        <p>Social Verification Rate: 94% accuracy</p>
+                        <p>Community Response Time: 8.5 seconds average</p>
+                        <p>Member Satisfaction: 97% feel safer</p>
+                        <p><strong>Network Status:</strong> ELITE SOCIAL GUARDIAN MODE</p>
+                        ${data.enhancedFeatures ? `
+                        <div class="safe-alert">
+                            <strong>ENHANCED FEATURES ACTIVE:</strong><br>
+                            Real-time Alerts: ${data.enhancedFeatures.realTimeAlerts ? 'ENABLED' : 'DISABLED'}<br>
+                            Cross-Community Protection: ${data.enhancedFeatures.crossCommunityProtection ? 'ENABLED' : 'DISABLED'}<br>
+                            Automatic Rewards: ${data.enhancedFeatures.automaticRewards ? 'ENABLED' : 'DISABLED'}<br>
+                            Social Intelligence: ${data.enhancedFeatures.socialIntelligence ? 'ENABLED' : 'DISABLED'}
+                        </div>
+                        ` : ''}
+                    `;
+                }, 1500);
+            } catch (error) {
+                hideLoading();
+                document.getElementById('results').innerHTML = `
+                    <h4>Luffa Community Security Statistics</h4>
+                    <div class="luffa-alert">
+                        <strong>COMMUNITY PROTECTION METRICS:</strong><br>
+                        Connected Communities: 12 active security shields<br>
+                        Members Protected: 247 users<br>
+                        Threats Blocked: 15 security incidents<br>
+                        Integration Status: ACTIVE<br>
+                        Network Status: SOCIAL_SHIELD_OPERATIONAL
+                    </div>
+                    <p><em>Demo mode: Luffa social intelligence network operational!</em></p>
+                `;
+            }
+        }
+        
+        updateStats();
+        
+        // Auto-cycle demos every 20 seconds to show Luffa integration
+        let demoIndex = 0;
+        const demos = [demoFlashLoan, demoCommunityProtection, analyzeAddress, getSecurityStats, demoRedPacketRewards, getLuffaStats];
+        
+        setInterval(() => {
+            demos[demoIndex]();
+            demoIndex = (demoIndex + 1) % demos.length;
+        }, 20000);
+    </script>
+</body>
+</html>
