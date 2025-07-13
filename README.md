@@ -98,9 +98,15 @@ node bot/defender-bot.js
 5. **Access the interface**
 Open your browser to: `http://localhost:3000`
 <img width="3132" height="1747" alt="image" src="https://github.com/user-attachments/assets/930c6520-df2d-4853-add0-0cb4396fc84f" />
+
 <img width="3039" height="1396" alt="image" src="https://github.com/user-attachments/assets/22ed43fa-92d9-493d-9c86-6f3ef4f0f139" />
+
 <img width="2980" height="1490" alt="image" src="https://github.com/user-attachments/assets/94844cb3-1f31-4203-9212-0f984cd5eb4c" />
+
 <img width="3002" height="1424" alt="image" src="https://github.com/user-attachments/assets/24f1871e-1f8f-41be-bc08-415e3160179e" />
+
+<img width="2966" height="1003" alt="image" src="https://github.com/user-attachments/assets/26546399-848a-4f0c-b9a3-59cf2ca1d8d2" />
+
 
 
 ## Demo Scenarios
