@@ -107,6 +107,9 @@ Open your browser to: `http://localhost:3000`
 
 <img width="2966" height="1003" alt="image" src="https://github.com/user-attachments/assets/26546399-848a-4f0c-b9a3-59cf2ca1d8d2" />
 
+<img width="2960" height="1502" alt="image" src="https://github.com/user-attachments/assets/e5cdab8e-1981-4400-be65-15b247e958be" />
+
+
 
 
 ## Demo Scenarios
