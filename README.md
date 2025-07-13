@@ -73,7 +73,7 @@ Luffa Ecosystem Integration
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/CyberChain-AI-Defender.git
+git clone https://github.com/zcybersense/CyberChain-AI-Defender.git
 cd CyberChain-AI-Defender
 ```
 
